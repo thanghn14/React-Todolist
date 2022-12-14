@@ -1,0 +1,38 @@
+.todo {
+  width: 100%;
+  background: #CE7777;
+  padding: .8rem 1.5rem;
+  margin-bottom: 1rem;
+  border-radius: .3rem;
+  font-size: 18px;
+  font-weight: 600;
+  color: rgba(43, 58, 85, .8);
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  position: relative;
+}
+
+.checkBoxStyle {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.deleteStyle {
+  position: absolute;
+  padding: .6rem 1rem;
+  right: .3rem;
+  color: #F2E5E5;
+  background: rgba(43, 58, 85, .5);
+  border-radius: .3rem;
+}
+.deleteStyle:hover {
+    background: rgba(43, 58, 85, .8);
+    cursor: pointer;
+}
+
+.contentStyle {
+  text-decoration: line-through;
+  max-width: 80%;
+  overflow-x: hidden;
+};
