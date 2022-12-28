@@ -41,6 +41,9 @@ const Todo = () => {
   const deleteTodo = (id) => {
     const newList = listTodo.filter((todo) => todo.id !== id);
     setListTodo(newList);
+    if(newList.length <= 1){
+      localStorage.removeItem(TODO_STORAGE_KEY);
+    }
   };
 
   return (
@@ -51,7 +54,12 @@ const Todo = () => {
         <div className="listTodoStyle">
           {listTodo.map((todo) => {
             return (
-              <ListTodo key={todo.id} todo={todo} deleteTodo={deleteTodo} />
+              <ListTodo
+                key={todo.id}
+                todo={todo}
+                deleteTodo={deleteTodo}
+                setListTodo={setListTodo}
+              />
             );
           })}
         </div>
