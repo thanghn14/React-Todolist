@@ -29,3 +29,8 @@
   outline: none;
   cursor: pointer;
 }
+
+.buttonStyle:hover {
+  opacity: .9;
+  transition: .2s ease-in-out; 
+}

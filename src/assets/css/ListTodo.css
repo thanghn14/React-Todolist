@@ -1,7 +1,7 @@
 .todo {
   width: 100%;
   background: #CE7777;
-  padding: .8rem 1.5rem;
+  padding: .8rem 1rem;
   margin-bottom: 1rem;
   border-radius: .3rem;
   font-size: 18px;
@@ -9,7 +9,7 @@
   color: rgba(43, 58, 85, .8);
   display: flex;
   align-items: center;
-  gap: .5rem;
+  gap: 1.2rem;
   position: relative;
 }
 
