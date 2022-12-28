@@ -24,8 +24,19 @@ const ListTodo = (props) => {
       >
         {todo.name}
       </p>
-      <a className="deleteStyle" onClick={() => deleteTodo(todo.id)}>
-        Delete
+      <a
+        className="deleteStyle"
+        onClick={() => {
+          if (check) {
+            deleteTodo(todo.id);
+          }
+        }}
+        style={{
+          cursor: check ? "pointer" : "not-allowed",
+          background: !check && "rgba(43, 58, 85, .5)",
+        }}
+      >
+        { check && `Delete` }
       </a>
     </div>
   );
