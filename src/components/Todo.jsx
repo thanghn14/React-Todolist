@@ -14,6 +14,7 @@ const Todo = () => {
     const getValue = localStorage.getItem(TODO_STORAGE_KEY);
     if(getValue) {
       setListTodo(JSON.parse(getValue)); 
+      console.log("listTodo", JSON.parse(getValue));
     }
   }, [])
 
@@ -59,6 +60,7 @@ const Todo = () => {
                 todo={todo}
                 deleteTodo={deleteTodo}
                 setListTodo={setListTodo}
+                listTodo={listTodo}
               />
             );
           })}

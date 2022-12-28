@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import '../assets/css/ListTodo.css'
+import React, { useEffect, useState } from "react";
+import "../assets/css/ListTodo.css";
 
 const ListTodo = (props) => {
   const [check, setCheck] = useState(false);
@@ -7,17 +7,32 @@ const ListTodo = (props) => {
   const todo = props.todo;
   const deleteTodo = props.deleteTodo;
   const setListTodo = props.setListTodo;
+  const listTodo = props.listTodo;
 
   return (
     <div className="todo">
       <input
         type="checkbox"
-        onClick={() => {
+        onClick={(e) => {
           setCheck(!check);
         }}
         onChange={(e)=>{
-          // setListTodo(e)
-          console.log('e', e.target.checked)
+          if (e.target.checked !== check) {
+            console.log("listTodo", listTodo);
+            const addCheck = e.target.checked;
+            setListTodo(
+              listTodo.map((e) => {
+                return { ...e, checked: addCheck };
+              })
+            );
+          } else {
+            const addCheck = e.target.checked;
+            setListTodo(
+              listTodo.map((e) => {
+                return { ...e, checked: !addCheck };
+              })
+            );
+          }
         }}
         className="checkBoxStyle"
       />{" "}
@@ -41,7 +56,7 @@ const ListTodo = (props) => {
           background: !check && "rgba(43, 58, 85, .5)",
         }}
       >
-        { check && `Delete` }
+        {check && `Delete`}
       </a>
     </div>
   );
