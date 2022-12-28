@@ -6,6 +6,7 @@ const ListTodo = (props) => {
 
   const todo = props.todo;
   const deleteTodo = props.deleteTodo;
+  const setListTodo = props.setListTodo;
 
   return (
     <div className="todo">
@@ -13,6 +14,10 @@ const ListTodo = (props) => {
         type="checkbox"
         onClick={() => {
           setCheck(!check);
+        }}
+        onChange={(e)=>{
+          // setListTodo(e)
+          console.log('e', e.target.checked)
         }}
         className="checkBoxStyle"
       />{" "}

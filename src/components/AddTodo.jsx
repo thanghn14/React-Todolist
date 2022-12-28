@@ -17,6 +17,11 @@ const AddTodo = (props) => {
           const todo = e.target.value;
           setNewTodo(todo);
         }}
+        onKeyDown={(e)=>{
+          if(e.key === 'Enter'){
+            addTodo()
+          }
+        }}
       />
       <button className="buttonStyle" onClick={addTodo}>
         ADD
